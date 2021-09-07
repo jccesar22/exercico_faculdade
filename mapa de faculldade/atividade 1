@@ -1,0 +1,25 @@
+Scanner s = new Scanner(System.in);
+        
+        System.out.println("            Equação do Segundo Grau");
+        System.out.println("\nDigite os valores de A, B e C da equação.\n");
+        
+        System.out.print("A: ");
+        double a = s.nextDouble();
+        
+        System.out.print("B: ");
+        double b = s.nextDouble();
+        
+        System.out.print("C: ");
+        double c = s.nextDouble();
+        
+        double delta = Math.pow(b, 2) - 4*(a+c);
+        double x1 = (-b + Math.sqrt(delta) ) / 2*a; 
+        double x2 = (-b - Math.sqrt(delta) ) / 2*a; 
+        
+        System.out.println("\nX1 = " + x1);
+        System.out.println("X2 = " + x2);
+        
+
+
+
+cliar a class para poder fazer o 
