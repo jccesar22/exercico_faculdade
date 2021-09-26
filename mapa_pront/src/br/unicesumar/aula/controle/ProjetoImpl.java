@@ -8,7 +8,7 @@ import java.util.Set;
 import br.unicesumar.aula.exceptions.DadoConsultadoException;
 import br.unicesumar.aula.modelo.Projeto;
 
-public class ProjetoImpl implements ProjetoDAO{
+public class ProjetoImpl implements ProjetoDAO, program.controle.ProjetoDAO {
 	// Collection que irá armazenar todos os projetos
 	private static Set<Projeto> projetos = new HashSet<>();
 
@@ -79,6 +79,32 @@ public class ProjetoImpl implements ProjetoDAO{
 	@Override
 	public String toString() {
 		return "ProjetoImpl listar()=" + listar() + "\n";
+	}
+
+	@Override
+	public void adicionar(program.modelo.Projeto projeto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public program.modelo.Projeto consultarPorNome(String nome) throws program.exceptions.DadoConsultadoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public program.modelo.Projeto alterar(String nome, program.modelo.Projeto projeto)
+			throws program.exceptions.DadoConsultadoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void excluir(program.modelo.Projeto projeto)
+			throws program.exceptions.DadoConsultadoException, UnsupportedOperationException {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

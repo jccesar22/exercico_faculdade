@@ -1,20 +1,20 @@
 package br.unicesumar.aula;
 
-import java.text.ParseException;
-import java.time.format.DateTimeParseException;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
 import br.unicesumar.aula.controle.ProjetoDAO;
 import br.unicesumar.aula.controle.ProjetoImpl;
 import br.unicesumar.aula.exceptions.DadoConsultadoException;
 import br.unicesumar.aula.modelo.Projeto;
 
+import java.text.ParseException;
+import java.time.format.DateTimeParseException;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class Principal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 		 ProjetoDAO dao = new ProjetoImpl();
 	        int opcao;
 	        do{
@@ -38,6 +38,7 @@ public class Principal {
 	                        projeto.setDataFinal(coletarTexto("Digite a data final do projeto"));
 	                        projeto.setStatus(coletarTexto("Digite o status do projeto"));
 	                        dao.adicionar(projeto);
+	                       System.out.println(projeto); 
 	                        break;
 	                    case 2:
 	                        String nomeConsultaAlterar = coletarTexto("Digite o nome do projeto que está buscando para alterar");
@@ -73,14 +74,15 @@ public class Principal {
 	            } catch (DadoConsultadoException e) {
 	                System.out.println(e.getMessage());
 	            }
-	            coletarTexto("----");
+	            coletarTexto("------------------------------------------------------------------------------");
 	        }while (opcao!=0);
 	    }
+	
 	 
 	    private static String coletarTexto(String descricao){
 	        Scanner scanner = new Scanner(System.in);
 	        System.out.println(descricao);
 	        return scanner.nextLine();
 	    }
-	}
+	    }
 

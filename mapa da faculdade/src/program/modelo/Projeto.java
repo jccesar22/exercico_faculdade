@@ -8,13 +8,7 @@ package program.modelo;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-
-import program.controle.ProjetoDAO;
-import program.controle.ProjetoImpl;
-import program.exceptions.DadoConsultadoException;
 
 /**
  *
@@ -123,7 +117,7 @@ public class Projeto {
     @Override
     public String toString() {
         return "\nProjeto: \n" +
-                "Nome: " + nome + "\n" +
+                "Nome do projeto: " + nome + "\n" +
                 "Objetivo: " + objetivo + "\n" +
                 "Necessidades: " + necessidades + "\n" +
                 "Data Início: " + dataInicio.format(FORMATO_DATA) + "\n" +

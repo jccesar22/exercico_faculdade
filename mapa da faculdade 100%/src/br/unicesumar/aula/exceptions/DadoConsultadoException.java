@@ -1,7 +1,12 @@
 package br.unicesumar.aula.exceptions;
 
 public class DadoConsultadoException extends Exception{
-	 public DadoConsultadoException(String message) {
+	 /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public DadoConsultadoException(String message) {
 	        super(message);
 	    }
 }
