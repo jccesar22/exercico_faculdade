@@ -35,7 +35,7 @@ public class ProjetoImpl implements ProjetoDAO{
 			}
 		}
 
-		throw new DadoConsultadoException("Nome não encontrado no projeto");
+		throw new DadoConsultadoException("Projeto não encontrado !");
 	}
 
 	// alterar pprojeto altera o projeto que você escolhe o nome

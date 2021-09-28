@@ -34,8 +34,8 @@ public class Principal {
 	                        projeto.setNome(coletarTexto("Digite o nome do projeto"));
 	                        projeto.setObjetivo(coletarTexto("Digite os objetivos do projeto"));
 	                        projeto.setNecessidades(coletarTexto("Digite as necessidades do projeto"));
-	                        projeto.setDataInicio(coletarTexto("Digite a data de início do projeto"));
-	                        projeto.setDataFinal(coletarTexto("Digite a data final do projeto"));
+	                        projeto.setDataInicio(coletarTexto("Digite a data de início do projeto 'dd/mm/aaaa'"));
+	                        projeto.setDataFinal(coletarTexto("Digite a data final do projeto 'dd/mm/aaaa'"));
 	                        projeto.setStatus(coletarTexto("Digite o status do projeto"));
 	                        dao.adicionar(projeto);
 	                        break;
@@ -45,8 +45,8 @@ public class Principal {
 	                        projetoNovo.setNome(coletarTexto("Digite o nome do projeto"));
 	                        projetoNovo.setObjetivo(coletarTexto("Digite os objetivos do projeto"));
 	                        projetoNovo.setNecessidades(coletarTexto("Digite as necessidades do projeto"));
-	                        projetoNovo.setDataInicio(coletarTexto("Digite a data de início do projeto"));
-	                        projetoNovo.setDataFinal(coletarTexto("Digite a data final do projeto"));
+	                        projetoNovo.setDataInicio(coletarTexto("Digite a data de início do projeto 'dd/mm/aaaa'"));
+	                        projetoNovo.setDataFinal(coletarTexto("Digite a data final do projeto 'dd/mm/aaaa'"));
 	                        projetoNovo.setStatus(coletarTexto("Digite o status do projeto"));
 	                        dao.alterar(nomeConsultaAlterar, projetoNovo);
 	                        break;
@@ -78,7 +78,8 @@ public class Principal {
 	    }
 	 
 	    private static String coletarTexto(String descricao){
-	        Scanner scanner = new Scanner(System.in);
+	        @SuppressWarnings("resource")
+			Scanner scanner = new Scanner(System.in);
 	        System.out.println(descricao);
 	        return scanner.nextLine();
 	    }
