@@ -13,7 +13,7 @@ public class EquacaoSegundoGrau {
 	}
 	public EquacaoSegundoGrau(double a, double b, double c) {
 		this.a = a;
-		this.b = b;
+		this.setB(b);
 		this.c = c;
 	}
 
@@ -48,6 +48,12 @@ public class EquacaoSegundoGrau {
 	            System.out.println("Coeficiente 'a' inválido. Não é uma equação do Segundo grau o Coeficiente zero");
 	        }
 	    }
+	public double getB() {
+		return b;
+	}
+	public void setB(double b) {
+		this.b = b;
+	}
 
 		/* if(a != 0 || b != 0 || c != 0) {
 	            throw new ArithmeticException("não poder ter zero na equação");
