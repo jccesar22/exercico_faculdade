@@ -44,34 +44,30 @@ public class ProjetoImpl implements ProjetoDAO{
 	public Projeto alterar(String nome, Projeto projeto) throws DadoConsultadoException {
 		Projeto alteracao = consultarPorNome(nome);
 		if (projetos.contains(alteracao)) {
-
 			alteracao.setNome(projeto.getNome());
 			alteracao.setObjetivo(projeto.getObjetivo());
 			alteracao.setNecessidades(projeto.getNecessidades());
 			alteracao.setDataInicio(projeto.getDataInicio());
 			alteracao.setDataFinal(projeto.getDataFinal());
 			alteracao.setStatus(projeto.getStatus());
-			return alteracao;
-
 		}
-
+		
 		return null;
 	}
 
 	// exclusão do projeto pelo nome do projeto
 	@Override
-	public void excluir(Projeto projeto) throws DadoConsultadoException, UnsupportedOperationException {
-		if (projetos.contains(projeto)) {
+	public void excluir(Projeto projeto) throws DadoConsultadoException, UnsupportedOperationException {	
+	if (projetos.contains(projeto)) {
 			projetos.remove(projeto);
 			System.out.println("Excluindo o projeto: " + projeto);
-			return;
+			this.adicionar(projeto);
 		}
 		throw new DadoConsultadoException("Não foi encontrado o projeto para a exclusão");
 	}
 
 	@Override
 	public void excluir(String nome) throws DadoConsultadoException, UnsupportedOperationException {
-
 		Projeto excluirProjeto = consultarPorNome(nome);
 		this.excluir(excluirProjeto);
 	}

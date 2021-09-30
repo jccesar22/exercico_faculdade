@@ -115,6 +115,8 @@ public class Projeto {
 				+ dataFinal.format(FORMATO_DATA) + "\n" + "Status: " + status + "\n";
 	}
 
+
+
 	
 
 }
