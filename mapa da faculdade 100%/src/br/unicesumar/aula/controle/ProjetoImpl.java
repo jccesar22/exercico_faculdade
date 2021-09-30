@@ -2,7 +2,9 @@ package br.unicesumar.aula.controle;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Hashtable;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 import br.unicesumar.aula.exceptions.DadoConsultadoException;
@@ -54,15 +56,18 @@ public class ProjetoImpl implements ProjetoDAO{
 		
 		return null;
 	}
-
+	@Override
+	public int hashCode() {
+		return Objects.hash();
+	}
 	// exclusão do projeto pelo nome do projeto
 	@Override
 	public void excluir(Projeto projeto) throws DadoConsultadoException, UnsupportedOperationException {	
 	if (projetos.contains(projeto)) {
 			projetos.remove(projeto);
 			System.out.println("Excluindo o projeto: " + projeto);
-			this.adicionar(projeto);
 		}
+		
 		throw new DadoConsultadoException("Não foi encontrado o projeto para a exclusão");
 	}
 

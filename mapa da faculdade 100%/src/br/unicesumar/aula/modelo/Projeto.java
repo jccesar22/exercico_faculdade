@@ -71,7 +71,7 @@ public class Projeto {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
+/*
 	@Override
 	public boolean equals(Object o) {
 		if (this == o)
@@ -86,7 +86,7 @@ public class Projeto {
 	public int hashCode() {
 		return Objects.hash(nome);
 	}
-
+*/
 	public Projeto copia() {
 		Projeto projeto = new Projeto();
 		projeto.setNome(this.nome);
