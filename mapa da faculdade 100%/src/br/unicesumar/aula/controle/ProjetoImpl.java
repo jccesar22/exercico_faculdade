@@ -2,15 +2,13 @@ package br.unicesumar.aula.controle;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Hashtable;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 
 import br.unicesumar.aula.exceptions.DadoConsultadoException;
 import br.unicesumar.aula.modelo.Projeto;
 
-public class ProjetoImpl implements ProjetoDAO{
+public class ProjetoImpl implements ProjetoDAO {
 	// Collection que irá armazenar todos os projetos
 	private static Set<Projeto> projetos = new HashSet<>();
 
@@ -41,7 +39,7 @@ public class ProjetoImpl implements ProjetoDAO{
 	}
 
 	// alterar pprojeto altera o projeto que você escolhe o nome
-	
+
 	@Override
 	public Projeto alterar(String nome, Projeto projeto) throws DadoConsultadoException {
 		Projeto alteracao = consultarPorNome(nome);
@@ -53,22 +51,20 @@ public class ProjetoImpl implements ProjetoDAO{
 			alteracao.setDataFinal(projeto.getDataFinal());
 			alteracao.setStatus(projeto.getStatus());
 		}
-		
-		return null;
+
+		return alteracao;
 	}
-	@Override
-	public int hashCode() {
-		return Objects.hash();
-	}
+
 	// exclusão do projeto pelo nome do projeto
 	@Override
-	public void excluir(Projeto projeto) throws DadoConsultadoException, UnsupportedOperationException {	
-	if (projetos.contains(projeto)) {
+	public void excluir(Projeto projeto) throws DadoConsultadoException, UnsupportedOperationException {
+		if (projetos.contains(projeto)) {
 			projetos.remove(projeto);
 			System.out.println("Excluindo o projeto: " + projeto);
+		} else {
+
+			throw new DadoConsultadoException("Não foi encontrado o projeto para a exclusão");
 		}
-		
-		throw new DadoConsultadoException("Não foi encontrado o projeto para a exclusão");
 	}
 
 	@Override

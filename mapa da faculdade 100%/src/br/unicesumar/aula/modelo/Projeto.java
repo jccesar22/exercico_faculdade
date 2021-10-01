@@ -71,6 +71,7 @@ public class Projeto {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	//codigo comentado devido dar erro quando altera o projeto
 /*
 	@Override
 	public boolean equals(Object o) {
